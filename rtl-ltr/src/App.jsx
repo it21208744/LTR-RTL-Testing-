@@ -1,25 +1,28 @@
 import React from 'react'
+import './css/App.css'
 import { useDirection } from './Components/DirectionContext'
 import Header from './Components/Header'
-
+import FormComponent from './Components/FormComponent'
 const MainComponent = () => {
   const { direction, toggleDirection } = useDirection()
 
   return (
-    <div dir={direction}>
+    <div dir={direction} className="main-container">
       <Header />
 
       {direction === 'ltr' ? (
         <p>
-          There was little doubt that the bridge was unsafe. All one had to do
-          was look at it to know that with certainty. Yet Bob didn't see another
-          option. He may have been able to work one out if he had a bit of time
-          to think things through, but time was something he didn't have. A
-          choice needed to be made, and it needed to be made quickly. The red
-          ball sat proudly at the top of the toybox. It had been the last to be
-          played with and anticipated it would be the next as well. The other
-          toys grumbled beneath. At one time each had held the spot of the red
-          ball, but over time they had sunk deeper and deeper into the toy box.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat,
+          est deserunt dicta ratione corrupti alias eum velit quia et minima
+          vero tenetur nam ut, porro commodi ab. Totam eum, quis explicabo
+          praesentium nam amet accusamus ab ad veniam alias dolorem excepturi
+          quos unde labore delectus, harum voluptatem, iste in voluptatum. Lorem
+          ipsum, dolor sit amet consectetur adipisicing elit. Porro omnis
+          doloribus maxime aliquam enim, modi soluta praesentium, quae
+          voluptate, nam vero tempore vitae. Eum, odio debitis architecto illo
+          ipsum sint at beatae non placeat exercitationem. Modi reprehenderit
+          iusto, placeat, enim sit cum ad magni quasi architecto velit autem,
+          quidem eligendi!
         </p>
       ) : (
         <p>
@@ -34,6 +37,8 @@ const MainComponent = () => {
           وأعمق في صندوق الألعاب.
         </p>
       )}
+
+      <FormComponent />
     </div>
   )
 }
