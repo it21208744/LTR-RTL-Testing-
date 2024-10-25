@@ -41,6 +41,9 @@ const FormComponent = () => {
     <div>
       <h2>{direction === 'ltr' ? 'Submit Your Info' : 'أرسل معلوماتك'}</h2>
       <form onSubmit={handleSubmit}>
+        <h1 className="formTitle">
+          {direction === 'ltr' ? 'Submit Your Info' : 'أرسل معلوماتك'}
+        </h1>
         <div>
           <label>{direction === 'ltr' ? 'Name' : 'اسم'}</label>
           <input
@@ -51,7 +54,7 @@ const FormComponent = () => {
           />
         </div>
         <div>
-          <label>:{direction === 'ltr' ? 'Email' : 'بريد إلكتروني'}</label>
+          <label>{direction === 'ltr' ? 'Email' : 'بريد إلكتروني'}</label>
           <input
             type="email"
             value={email}

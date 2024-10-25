@@ -9,6 +9,11 @@ h2 {
   color: #f8f9fa;
 }
 
+.formTitle {
+  color: #865dff;
+  text-align: center;
+}
+
 form {
   background-color: #fff;
   border-radius: 8px;
