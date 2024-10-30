@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useDirection } from './DirectionContext'
 import '../css/FormComponent.css'
+import { useTranslation } from 'react-i18next'
 
 const FormComponent = () => {
+  const { t } = useTranslation()
   const { direction, toggleDirection } = useDirection()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -39,13 +41,11 @@ const FormComponent = () => {
 
   return (
     <div>
-      <h2>{direction === 'ltr' ? 'Submit Your Info' : 'أرسل معلوماتك'}</h2>
+      {/* <h2>{direction === 'ltr' ? 'Submit Your Info' : 'أرسل معلوماتك'}</h2> */}
       <form onSubmit={handleSubmit}>
-        <h1 className="formTitle">
-          {direction === 'ltr' ? 'Submit Your Info' : 'أرسل معلوماتك'}
-        </h1>
+        <h1 className="formTitle">{t('formTitle')}</h1>
         <div>
-          <label>{direction === 'ltr' ? 'Name' : 'اسم'}</label>
+          <label>{t('inputFieldName')}</label>
           <input
             type="text"
             value={name}
@@ -54,7 +54,7 @@ const FormComponent = () => {
           />
         </div>
         <div>
-          <label>{direction === 'ltr' ? 'Email' : 'بريد إلكتروني'}</label>
+          <label>{t('inputFieldEmail')}</label>
           <input
             type="email"
             value={email}
@@ -62,9 +62,7 @@ const FormComponent = () => {
             required
           />
         </div>
-        <button type="submit">
-          {direction === 'ltr' ? 'Submit' : 'يُقدِّم'}
-        </button>
+        <button type="submit">{t('inputSubmit')}</button>
       </form>
       {response && (
         <div>
